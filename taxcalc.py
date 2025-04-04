@@ -1,6 +1,8 @@
 import unittest
 
 def taxcalculation(earning, months):
+    if not isinstance(earning, (int, float)) or not isinstance(months, (int, float)):
+        raise ValueError ("both earning and months must be numeric")
     if earning < 1000:
         return 0.0
     elif earning < 3000:
