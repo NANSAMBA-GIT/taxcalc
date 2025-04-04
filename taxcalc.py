@@ -5,6 +5,8 @@ def taxcalculation(earning, months):
         raise ValueError ("both earning and months must be numeric")
     if isinstance (earning, (str)) or isinstance(months, (str)):
         raise ValueError ("strings can't be entered as earning or months")
+    if earning <= 0 or months <= 0:
+        raise ValueError ("earning and months can't be negative")
     if earning < 1000:
         return 0.0
     elif earning < 3000:
